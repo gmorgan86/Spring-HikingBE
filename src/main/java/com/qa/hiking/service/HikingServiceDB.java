@@ -9,13 +9,11 @@ import org.springframework.stereotype.Service;
 import com.qa.hiking.domain.Hiking;
 import com.qa.hiking.repo.HikingRepo;
 
-
-
 @Service
 public class HikingServiceDB implements HikingService {
-	
+
 	private HikingRepo repo;
-	
+
 	@Autowired
 	public HikingServiceDB(HikingRepo repo) {
 		super();
@@ -39,6 +37,27 @@ public class HikingServiceDB implements HikingService {
 		return found.get();
 	}
 
+//	@Override
+//	public List<Hiking> getAllHillsByName(String name) {
+//		List<Hiking> found = this.repo.findByNameIgnoreCase(name);
+//		return found;
+//	}
+	
+	@Override
+	public List<Hiking> getByMountainName(String mountainName) {
+		return this.repo.findByMountainNameIgnoreCase(mountainName);
+	}
+
+	@Override
+	public List<Hiking> getByRegion(String region) {
+		return this.repo.findByRegionIgnoreCase(region);
+	}
+
+	@Override
+	public List<Hiking> getByCountry(String country) {
+		return this.repo.findByCountryIgnoreCase(country);
+	}
+
 	@Override
 	public Hiking replaceHill(Integer id, Hiking newHill) {
 		Hiking existing = this.repo.findById(id).get();
@@ -48,7 +67,6 @@ public class HikingServiceDB implements HikingService {
 		existing.setRegion(newHill.getRegion());
 		existing.setHeight(newHill.getHeight());
 		existing.setCountry(newHill.getCountry());
-
 
 		Hiking updated = this.repo.save(existing);
 
@@ -60,5 +78,7 @@ public class HikingServiceDB implements HikingService {
 		this.repo.deleteById(id);
 
 	}
+
+	
 
 }
