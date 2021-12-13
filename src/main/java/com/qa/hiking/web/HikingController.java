@@ -49,7 +49,11 @@ public class HikingController {
 		return this.service.getHill(id);
 	}
 	
-	
+//	@GetMapping("/getByName/{name}")
+//	public ResponseEntity<List<Hiking>> getAllHillsByName(@PathVariable String mountainName) {
+//		List<Hiking> found = this.service.getAllHillsByName(mountainName);
+//		return ResponseEntity.ok(found);
+//	}
 
 	@PutMapping("/replace/{id}")
 	public ResponseEntity<Hiking> replaceHill(@PathVariable Integer id, @RequestBody Hiking newHill) {

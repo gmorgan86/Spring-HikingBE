@@ -39,6 +39,12 @@ public class HikingServiceDB implements HikingService {
 		return found.get();
 	}
 
+//	@Override
+//	public List<Hiking> getAllHillsByName(String name) {
+//		List<Hiking> found = this.repo.findByNameIgnoreCase(name);
+//		return found;
+//	}
+	
 	@Override
 	public Hiking replaceHill(Integer id, Hiking newHill) {
 		Hiking existing = this.repo.findById(id).get();
@@ -60,5 +66,7 @@ public class HikingServiceDB implements HikingService {
 		this.repo.deleteById(id);
 
 	}
+
+	
 
 }
