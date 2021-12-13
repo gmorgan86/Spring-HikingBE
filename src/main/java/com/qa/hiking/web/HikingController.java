@@ -49,12 +49,22 @@ public class HikingController {
 		return this.service.getHill(id);
 	}
 	
-//	@GetMapping("/getByName/{name}")
-//	public ResponseEntity<List<Hiking>> getAllHillsByName(@PathVariable String mountainName) {
-//		List<Hiking> found = this.service.getAllHillsByName(mountainName);
-//		return ResponseEntity.ok(found);
-//	}
-
+	@GetMapping("/getByName/{mountainName}")
+	public List<Hiking> getByMountainName(@PathVariable String mountainName) {
+		return this.service.getByMountainName(mountainName);
+	}
+	
+	@GetMapping("/getByRegion/{region}")
+	public List<Hiking> getByRegion(@PathVariable String region) {
+		return this.service.getByRegion(region);
+	}
+	
+	@GetMapping("/getByCountry/{country}")
+	public List<Hiking> getByCountry(@PathVariable String country) {
+		return this.service.getByCountry(country);
+	}
+	
+	
 	@PutMapping("/replace/{id}")
 	public ResponseEntity<Hiking> replaceHill(@PathVariable Integer id, @RequestBody Hiking newHill) {
 		Hiking body = this.service.replaceHill(id, newHill);

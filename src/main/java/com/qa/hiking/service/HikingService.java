@@ -17,10 +17,16 @@ public interface HikingService {
 	//Get By ID
 	Hiking getHill(Integer id);
 	
-//	//Get by name
-//	List<Hiking> getAllHillsByName(String name);
-
+	//GetbyName
+	List<Hiking> getByMountainName(String mountainName);
 	
+	//GetbyRegion
+	List<Hiking> getByRegion(String region);
+	
+	//GetbyCountry
+	List<Hiking> getByCountry(String country);
+	
+		
 	//Replace by ID
 	Hiking replaceHill(Integer id, Hiking newHill);
 	
