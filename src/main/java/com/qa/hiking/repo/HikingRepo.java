@@ -1,5 +1,11 @@
 package com.qa.hiking.repo;
 
-public class HikingRepo {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.qa.hiking.domain.Hiking;
+
+
+
+	public interface HikingRepo extends JpaRepository<Hiking, Integer> {
 
 }
