@@ -37,11 +37,7 @@ public class HikingServiceDB implements HikingService {
 		return found.get();
 	}
 
-//	@Override
-//	public List<Hiking> getAllHillsByName(String name) {
-//		List<Hiking> found = this.repo.findByNameIgnoreCase(name);
-//		return found;
-//	}
+
 	
 	@Override
 	public List<Hiking> getByMountainName(String mountainName) {

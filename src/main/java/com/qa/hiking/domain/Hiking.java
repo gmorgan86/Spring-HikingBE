@@ -9,26 +9,24 @@ import javax.persistence.Id;
 @Entity // flags class as a table to Spring
 public class Hiking {
 
-	@Id //Primary Key
+	@Id // Primary Key
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // Auto_increment
 	private Integer id;
-	
+
 	@Column(nullable = false)
 	private String mountainName;
-	
+
 	@Column(nullable = false)
 	private String region;
-	
+
 	@Column(nullable = false)
 	private Integer height;
-	
+
 	@Column(nullable = false)
 	private String country;
 
-	
-	
-	//Constructors
-	
+	// Constructors
+
 	public Hiking(Integer id, String mountainName, String region, Integer height, String country) {
 		super();
 		this.id = id;
@@ -38,23 +36,16 @@ public class Hiking {
 		this.country = country;
 	}
 
-	
-	
 	public Hiking() {
 		super();
 	}
-
-
 
 	public Hiking(Integer id) {
 		super();
 		this.id = id;
 	}
 
-	
-	
-	
-	//Getters and Setters
+	// Getters and Setters for variables
 
 	public Integer getId() {
 		return id;
@@ -96,15 +87,12 @@ public class Hiking {
 		this.country = country;
 	}
 
-
+	// toString
 
 	@Override
 	public String toString() {
 		return "Hiking [id=" + id + ", mountainName=" + mountainName + ", region=" + region + ", height=" + height
 				+ ", country=" + country + "]";
 	}
-	
-	
-	
-	
+
 }

@@ -17,6 +17,5 @@ import com.qa.hiking.domain.Hiking;
 
 		List<Hiking> findByCountryIgnoreCase(String country);
 
-//		List<Hiking> findByNameIgnoreCase(String name);
 
 }
